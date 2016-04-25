@@ -1,0 +1,7 @@
+.taskComplete {
+  background-color: tomato;
+  text-decoration: line-through;
+}
+.taskNotComplete {
+  background-color: goldenrod;
+}

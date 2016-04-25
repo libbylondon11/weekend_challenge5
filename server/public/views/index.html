@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="taskApp">
+  <head>
+    <meta charset="utf-8">
+    <title>To Do's</title>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="assets/scripts/client.min.js"></script>
+    <link rel="stylesheet" href="views/style.css"/>
+  </head>
+  <body>
+<div ng-controller= "CoolController as parent">
+<div class="inputs">
+      <h2>Tasks this Week </h2>
+<input type="text" ng-model="parent.task_name"/>
+<div class="col-md-6">
+  <button ng-click="parent.sendTasks()">Submit a Task</button>
+</div>
+  <div class="container">
+
+<div ng-repeat="tasksArray in parent.tasksArray">
+<span ng-class="{taskComplete: tasksArray.completed, taskNotComplete : !tasksArray.completed}" >Tasks: {{tasksArray.task_name}}</span>
+<button ng-click="parent.delete(tasksArray)">Delete</button>
+<button ng-click="parent.completed(tasksArray)">complete</button>
+
+  </div>
+  </div>
+  </div>
+</div>
+    <!-- <button ng-click= "parent.sendTasks()">Submit Task</button> -->
+ <!-- <button class="btn btn-success" ng-click="parent.removeTask(task)">Deleted</button> -->
+    </div>
+  </body>
+</html>
